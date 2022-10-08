@@ -1,1 +1,4 @@
 .idea
+backend/main
+**.zip
+**.terraform/

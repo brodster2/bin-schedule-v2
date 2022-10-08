@@ -1,13 +1,18 @@
-package main_test
+package helpers
 
 import (
-	bs "bin_schedule_v2"
 	"reflect"
 	"testing"
 )
 
 func TestLoadFromCSV(t *testing.T) {
-	got, err := bs.LoadFromCSV("test_schedule.csv")
+	csv := `Date, Bins
+17-11-21,Orange
+24-11-21,Grey:Blue
+01-12-21,Orange
+08-12-21, Green`
+
+	got, err := LoadFromCSV(csv)
 	if err != nil {
 		t.Fatalf("Failure loading CSV: %v", err)
 	}
